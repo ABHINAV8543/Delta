@@ -39,6 +39,7 @@ body{
     position: sticky;
     background-color: black;
     display: flex;
+    justify-content: center;
 }
 
 .nav{
@@ -277,7 +278,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 50%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 0.25rem;
 }
@@ -421,4 +422,19 @@ body{
 
 .controls input:hover::-webkit-slider-thumb{
     box-shadow: -1000px 0 0 1000px #4caf50;
+}
+
+@media (max-width: 1200px) {
+  .sidebar, .navbar{
+    display: none;
+  }
+}
+
+@media (max-width: 864px) {
+  .album, .controls{
+    display: none;
+  }
+  .player{
+    width: 100%;
+  }
 }
