@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chats</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <% allChats.forEach(chat => { %>
+        <div class="container">
+            <h4 class="from"> <%= chat.from %> said:</h4>
+            <p class="message"> <%= chat.message %> </p>
+            <h4 class="to"> to <%= chat.to %> </h4>
+            <p class="date"> at <%= chat.date %> </p>
+        </div>
+    <% }) %>
 </body>
 </html>

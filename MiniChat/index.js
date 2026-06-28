@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/chats", async(req, res) => {
-    let allChats = chat.find();
-    res.render("chats", allChats);
+app.get("/chats", async (req, res) => {
+    let allChats = await chat.find();
+    res.render("chats", { allChats });
 });
