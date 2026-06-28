@@ -24,7 +24,11 @@ connect()
     console.log(error);
 });
 
-app.get("/", async (req, res) => {
-  const chats = await chat.find();
-  res.render("home", { chats });
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
+app.get("/chats", async(req, res) => {
+    let allChats = chat.find();
+    res.render("chats", allChats);
 });
