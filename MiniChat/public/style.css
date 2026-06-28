@@ -7,6 +7,11 @@ body{
     color: white;
 }
 
+h1{
+    text-align: center;
+    margin: 1rem;
+}
+
 .container{
     margin: 0.5rem;
     padding: 0.5rem;
@@ -30,4 +35,77 @@ body{
 
 .date{
     font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+}
+
+nav{
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 3rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transition: all 0.3s;
+}
+
+nav a:hover{
+    color: black;
+    background-color: white;
+}
+
+.current{
+    background-color: pink;
+    color: black;
+}
+
+.new-chat{
+    margin: 2rem;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.15);
+    flex-direction: column;
+    font-size: 1.25rem;
+    border-radius: 25px;
+}
+
+.new-chat div{
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    color: pink;
+}
+
+.new-chat input, .new-chat textarea{
+    margin-left: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    align-items: center;
+    color: white;
+}
+
+.new-chat button{
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 229);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+}
+
+.new-chat button:hover{
+    background-color: white;
+    color: black;
 }

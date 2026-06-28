@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chats</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <nav>
+        <a href="/"> Home </a>
+        <a href="/chats"  class="current"> Chats </a>
+        <a href="/chats/new"> New Chat </a>
+    </nav>
     <% allChats.forEach(chat => { %>
         <div class="container">
             <h4 class="from"> <%= chat.from %> said:</h4>
