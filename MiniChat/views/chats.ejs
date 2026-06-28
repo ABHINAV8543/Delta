@@ -12,13 +12,13 @@
         <a href="/chats"  class="current"> Chats </a>
         <a href="/chats/new"> New Chat </a>
     </nav>
-    <% allChats.forEach(chat => { %>
+    <% for(let i = allChats.length-1; 0<=i; i-=1) { %>
         <div class="container">
-            <h4 class="from"> <%= chat.from %> said:</h4>
-            <p class="message"> <%= chat.message %> </p>
-            <h4 class="to"> to <%= chat.to %> </h4>
-            <p class="date"> at <%= chat.date %> </p>
+            <h4 class="from"> <%= allChats[i].from %> said:</h4>
+            <p class="message"> <%= allChats[i].message %> </p>
+            <h4 class="to"> to <%= allChats[i].to %> </h4>
+            <p class="date"> at <%= allChats[i].date %> </p>
         </div>
-    <% }) %>
+    <% } %>
 </body>
 </html>
