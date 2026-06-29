@@ -21,7 +21,7 @@
             <p class="message"> <%= allChats[i].message %> </p>
             <h4 class="to"> to <%= allChats[i].to %> </h4>
             <a href="/chats/edit/<%- allChats[i]._id %>"><button class="btn edit">Edit</button></a>
-            <button class="btn delete" onclick="confirmDelete()">Delete</button>
+            <button class="btn delete" onclick="confirmDelete('<%- allChats[i]._id %>')">Delete</button>
             <p class="date"> at <%= allChats[i].date %> </p>
         </div>
     <% } %>

@@ -72,3 +72,9 @@ app.put("/chats/edit/:id", async (req, res) => {
     }});
     res.redirect("/chats");
 });
+
+app.delete('/chats/delete/:id', async (req, res) => {
+    const id = req.params.id;
+    await chat.findByIdAndDelete(id);
+    res.json({ redirectUrl: '/chats' }); 
+});
