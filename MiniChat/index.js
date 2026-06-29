@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const chat = require("./models/chat.js");
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -58,7 +60,7 @@ app.get("/chats/edit/:id", async (req, res) => {
     res.render("edit", { chat: currChat });
 });
 
-app.post("/chats/edit/:id", async (req, res) => {
+app.put("/chats/edit/:id", async (req, res) => {
     const id = req.params.id;
     let {from, to, message} = req.body;
     let currChat = await chat.updateOne({_id: id}, { $set:{

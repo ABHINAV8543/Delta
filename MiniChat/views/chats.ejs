@@ -20,9 +20,11 @@
             <h4 class="from"> <%= allChats[i].from %> said:</h4>
             <p class="message"> <%= allChats[i].message %> </p>
             <h4 class="to"> to <%= allChats[i].to %> </h4>
-            <a href="/chats/edit/<%- allChats[i]._id %>"><button class="btn edit">Edit</button></a> <button class="btn delete">Delete</button>
+            <a href="/chats/edit/<%- allChats[i]._id %>"><button class="btn edit">Edit</button></a>
+            <button class="btn delete" onclick="confirmDelete()">Delete</button>
             <p class="date"> at <%= allChats[i].date %> </p>
         </div>
     <% } %>
+    <script src="/script.js"></script>
 </body>
 </html>
