@@ -21,9 +21,10 @@ async function connect() {
 }
 connect()
 .then(() => {
-    console.log("connection successful");
+    console.log("Connected to Database");
 })
 .catch((error) => {
+    console.log("Database connection failed...");
     console.log(error);
 });
 
