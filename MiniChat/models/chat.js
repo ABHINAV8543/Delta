@@ -18,6 +18,11 @@ const chatSchema = new mongoose.Schema({
 
     message: {
         type: String
+    },
+
+    edited: {
+        type: Boolean,
+        default: false
     }
 });
 

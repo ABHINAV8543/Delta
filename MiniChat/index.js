@@ -47,7 +47,25 @@ app.post("/chats", (req, res) => {
         to: to,
         message: message,
         date: date
-    });
+    })
 
+    res.redirect("/chats");
+});
+
+app.get("/chats/edit/:id", async (req, res) => {
+    const id = req.params.id;
+    let currChat = await chat.findOne({_id: id});
+    res.render("edit", { chat: currChat });
+});
+
+app.post("/chats/edit/:id", async (req, res) => {
+    const id = req.params.id;
+    let {from, to, message} = req.body;
+    let currChat = await chat.updateOne({_id: id}, { $set:{
+        to: to,
+        from: from,
+        message: message,
+        edited: true,
+    }});
     res.redirect("/chats");
 });

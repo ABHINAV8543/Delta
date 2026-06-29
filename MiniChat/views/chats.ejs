@@ -14,9 +14,13 @@
     </nav>
     <% for(let i = allChats.length-1; 0<=i; i-=1) { %>
         <div class="container">
+            <% if(allChats[i].edited) { %>
+                <p class="edited">Edited</p>
+            <% } %>
             <h4 class="from"> <%= allChats[i].from %> said:</h4>
             <p class="message"> <%= allChats[i].message %> </p>
             <h4 class="to"> to <%= allChats[i].to %> </h4>
+            <a href="/chats/edit/<%- allChats[i]._id %>"><button class="btn edit">Edit</button></a> <button class="btn delete">Delete</button>
             <p class="date"> at <%= allChats[i].date %> </p>
         </div>
     <% } %>

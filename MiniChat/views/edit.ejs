@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Chat</title>
+    <title>Edit Chat</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -12,19 +12,19 @@
         <a href="/chats"> Chats </a>
         <a href="/chats/new"  class="current"> New Chat </a>
     </nav>
-    <form class="new-chat" action="/chats" method="POST">
+    <form class="new-chat" action="/chats/edit/<%- chat._id %>" method="POST">
         <div>
             <label for="to">To: </label>
-            <input type="text" name="to" id="to" required>
+            <input type="text" name="to" id="to" value="<%= chat.to %>" required>
         </div>
         <div>
-            <textarea name="message" id="message" rows="10" cols="50">Your Message Here...</textarea>
+            <textarea name="message" id="message" rows="10" cols="50"> <%= chat.message %> </textarea>
         </div>
         <div>
             <label for="from">Sender's Name: </label>
-            <input type="text" name="from" id="from" required>
+            <input type="text" name="from" id="from" value="<%= chat.from %>" required>
         </div>
-        <button type="submit">Send</button>
+        <button type="submit">Confirm</button>
     </form>
 </body>
 </html>
